@@ -83,17 +83,6 @@
       name: tomcat
       state: started
 
-- name: index.html on apps
-  hosts: apps
-  gather_facts: false
-  become: true
-
-  tasks:
-  - name: copy static index.html to tomcat webapps/ansible/index.html
-    template:
-      src: index.html.app1
-      dest: /usr/share/tomcat/webapps/ansible/index.html
-
 - name: deploy postgres
   hosts: appdbs
   gather_facts: false
