@@ -31,7 +31,7 @@
   become: true
 
   tasks:
-  - name: http and HAProxy 
+  - name: install http and HAProxy 
     yum:
       name: 
       - httpie
@@ -41,15 +41,17 @@
   - name: enable HAProxy
     service:
       name: haproxy
-      state: started
+      state: enabled
+
   - name: configure haproxy
     template:
       src: ./haproxy.cfg.j2
       dest: /etc/haproxy/haproxy.cfg
+
   - name: restart HAproxy
     service:
       name: haproxy
-      state: restarted
+      state: started
 
 
 - name: deploy tomcat
