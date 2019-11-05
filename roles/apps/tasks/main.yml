@@ -5,10 +5,12 @@
     state: latest
 
 - service:
-    name: 
-      - tomcat
-      - httpd
+    name: tomcat
     enabled: yes
+
+- service:
+    name: httpd
+    enabled: yes    
 
 - file:
       path: /usr/share/tomcat/webapps/ansible
