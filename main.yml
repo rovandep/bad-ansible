@@ -9,3 +9,7 @@
   roles: 
     - role: 'roles/frontends'
 
+- hosts: apps
+  gather_facts: false
+  roles: 
+    - role: 'roles/apps'
