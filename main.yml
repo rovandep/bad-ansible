@@ -1,9 +1,7 @@
 ---
 - hosts: all
-  tasks: 
-     - name: Configure repositories
-     - include_role: 
-         name: commons
+  roles:
+    - role: 'roles/commons
 
 - hosts: frontends
   tasks:
