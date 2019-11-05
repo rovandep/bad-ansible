@@ -37,7 +37,6 @@
 
     - name:  Remove database
       file:
-        file:
-          state: absent
-          path: /var/lib/pgsql/
+        state: absent
+        path: /var/lib/pgsql/
 ...
