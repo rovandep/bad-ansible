@@ -1,9 +1,9 @@
 ---
 - hosts: all
   tasks: 
-  - name: Configure repositories
-  - include_role: 
-    name: commons
+     - name: Configure repositories
+     - include_role: 
+         name: commons
 
 - hosts: frontends
   tasks:
