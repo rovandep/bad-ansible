@@ -7,9 +7,9 @@
     enabled: yes
 
 - shell: |
-    postgresql-11-setup initdb
+    postgresql-setup initdb
   ignore_errors: yes
-  
+
 # only run the next 2 tasks once!
 #  - name: initilize postgres
 #    command: postgresql-setup initdb
