@@ -2,3 +2,9 @@
 - hosts: all
   roles:
     - role: 'roles/commons'
+
+- hosts: frontends
+  roles: 
+    - role: 'roles/frontends'
+
+    
