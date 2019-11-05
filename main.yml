@@ -1,22 +1,24 @@
 ---
-- name: configuration
-  hosts: all
-  gather_facts: false
-  become: true
-
+- hosts: all
   tasks: 
   - name: Configure repositories
   - include_role: 
     name: commons
 
+- hosts: frontends
+  tasks:
   - name: Deploy HAProxy
   - include_role: 
     name: frontends
 
+- hosts: apps
+  tasks: 
   - name: Deploy Tomcat
   - include_role: 
     name: apps
 
+- hosts: appdbs
+  tasks:
   - name: Deploy PostgreSQL
   - include_role:
     name: appdbs
