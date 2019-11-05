@@ -1,0 +1,4 @@
+=== bad ansible
+Note: do not use this repository for any environment. 
+
+The purpose of this repository is only for learning through a Red Hat Advanced Ansible learning class.
