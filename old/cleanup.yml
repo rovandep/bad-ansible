@@ -34,4 +34,10 @@
       file:
         path: /tmp/index.html
         state: absent
+
+    - name:  Remove database
+      file:
+        file:
+          state: absent
+          path: /var/lib/pgsql/
 ...
