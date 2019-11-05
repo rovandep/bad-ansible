@@ -17,7 +17,7 @@
 - hosts: appbds
   gather_facts: false
   roles: 
-    - roles: 'roles/appdbs'
+    - role: 'roles/appdbs'
 
 
 
