@@ -14,11 +14,9 @@
   roles: 
     - role: 'roles/apps'
 
-- hosts: appbds
+- hosts: appdbs
   gather_facts: false
   roles: 
     - role: 'roles/appdbs'
-
-
 
 # db check or create -> module command create
