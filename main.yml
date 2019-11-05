@@ -13,3 +13,9 @@
   gather_facts: false
   roles: 
     - role: 'roles/apps'
+
+
+
+
+
+# db check or create -> module command create

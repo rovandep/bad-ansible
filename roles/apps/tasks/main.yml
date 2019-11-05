@@ -1,51 +1,27 @@
-- name: deploy tomcat
-  hosts: apps
-  gather_facts: false
-  become: true
+- yum:
+    name: 
+      - tomcat
+      - httpd  
+    state: latest
 
-  tasks:
-  - name: install tomcat
-    yum:
-      name: tomcat
-      state: latest
-  - name: enable tomcat at boot
-    service:
-      name: tomcat
-      enabled: yes
+- service:
+    name: 
+      - tomcat
+      - httpd
+    enabled: yes
 
-  - name: create ansible tomcat directory
-    file:
+- file:
       path: /usr/share/tomcat/webapps/ansible
       state: directory
+- template:
+    src: index.html.j2
+    dest: /usr/share/tomcat/webapps/ansible/index.html
+    mode: 0644
 
-  - name: copy static index.html to tomcat webapps/ansible/index.html
-    template:
-      src: index.html.j2
-      dest: /usr/share/tomcat/webapps/ansible/index.html
-      mode: 0644
+- service:
+    name: tomcat
+    state: started
 
-  - name: start tomcat
-    service:
-      name: tomcat
-      state: started
-
-- name: deploy apache
-  hosts: apps
-  gather_facts: false
-  become: true
-
-  tasks:
-  - name: install apache
-    yum:
-      name: httpd
-      state: latest
-
-  - name: enable apache at boot
-    service:
-      name: httpd
-      enabled: yes
-      
-  - name: start apache
-    service:
-      name: httpd
-      state: started
+- service:
+    name: httpd
+    state: started
