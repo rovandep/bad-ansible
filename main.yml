@@ -14,7 +14,10 @@
   roles: 
     - role: 'roles/apps'
 
-
+- hosts: appbds
+  gather_facts: false
+  roles: 
+    - roles: 'roles/appdbs'
 
 
 
