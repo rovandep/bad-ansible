@@ -1,0 +1,9 @@
+cat << EOF > ad_user_group_create.yml
+---
+- name: add active directory users
+  hosts: windows
+  vars_files:
+    - ./roles/winuser/vars/ad_users.yml
+
+  roles:
+    - winuser
